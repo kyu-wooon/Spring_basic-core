@@ -7,6 +7,7 @@ public class Order {
     private int itemPrice;
     private int discountPrice;
 
+    //Order 생성자
     public Order(Long memberId, String itemName, int itemPrice, int discountPrice) {
         this.memberId = memberId;
         this.itemName = itemName;
@@ -15,9 +16,10 @@ public class Order {
     }
 
     public int calculatePrice(){
-        return itemPrice - discountPrice;
+        return itemPrice - discountPrice; //상품 가격 - 할인 가격  = 계산 가격
     }
 
+    //getter setter
     public Long getMemberId() {
         return memberId;
     }

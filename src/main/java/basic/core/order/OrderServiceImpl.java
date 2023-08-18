@@ -1,9 +1,7 @@
 package basic.core.order;
-
 import basic.core.discount.DiscountPolicy;
 import basic.core.discount.FixDiscountPolicy;
 import basic.core.member.Member;
-import basic.core.member.MemberApp;
 import basic.core.member.MemberRepository;
 import basic.core.member.MemoryMemberRepository;
 

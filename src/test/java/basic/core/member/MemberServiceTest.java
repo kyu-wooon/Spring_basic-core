@@ -1,7 +1,7 @@
 package basic.core.member;
-
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
+
 public class MemberServiceTest {
     MemberService memberService = new MemberServiceImpl();
     @Test

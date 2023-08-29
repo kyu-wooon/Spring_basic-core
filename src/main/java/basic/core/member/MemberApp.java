@@ -1,10 +1,14 @@
 package basic.core.member;
 
+import basic.core.AppConfig;
+
 public class MemberApp {
 
     public static void main(String[] args) {
+        AppConfig appConfig = new AppConfig();
 
-        MemberService memberService = new MemberServiceImpl(); //멤버서비스 생성
+        MemberService memberService = appConfig.memberService();//멤버서비스 생성
+        //MemberService memberService = new MemberServiceImpl();
 
         Member member = new Member(1L, "memberA", Grade.VIP); // 멤버 객체 생성
 

@@ -1,15 +1,23 @@
 package basic.core.order;
 import basic.core.discount.DiscountPolicy;
 import basic.core.discount.FixDiscountPolicy;
+
+import basic.core.discount.RateDiscountPolicy;
 import basic.core.member.Member;
 import basic.core.member.MemberRepository;
 import basic.core.member.MemoryMemberRepository;
 
 public class OrderServiceImpl implements OrderService{
+    private final MemberRepository memberRepository;
+    private final DiscountPolicy discountPolicy;
+    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+    }
 
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
-    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
 
+    //private final DiscountPolicy discountPolicy = new RateDiscountPolicy();
+    //private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
     @Override
     //1. 회원정보와, 상품 이름 가격 받음
     public Order createOrder(Long memberId, String itemName, int itemPrice) {

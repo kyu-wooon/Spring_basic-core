@@ -2,7 +2,11 @@ package basic.core.member;
 
 public class MemberServiceImpl implements MemberService {
     //메모리 저장소 생성
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+    private final MemberRepository memberRepository;
+
+    public MemberServiceImpl(MemberRepository memberRepository){
+        this.memberRepository = memberRepository;
+    }
     @Override
     public void join(Member member) {
         memberRepository.save(member);//멤버 저장

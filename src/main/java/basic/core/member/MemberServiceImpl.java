@@ -1,9 +1,14 @@
 package basic.core.member;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class MemberServiceImpl implements MemberService {
     //메모리 저장소 생성
     private final MemberRepository memberRepository;
 
+    @Autowired //의존관계 주입 ac.getBean(MemberRepository.class)
     public MemberServiceImpl(MemberRepository memberRepository){
         this.memberRepository = memberRepository;
     }

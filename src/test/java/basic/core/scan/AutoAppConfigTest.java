@@ -1,5 +1,6 @@
-package scan;
+package basic.core.scan;
 
+import basic.core.AutoAppConfig;
 import basic.core.member.MemberService;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -10,7 +11,7 @@ public class AutoAppConfigTest {
 
     @Test
     public void basicScan(){
-        ApplicationContext ac = new AnnotationConfigApplicationContext(AutoAppConfigTest.class);
+        AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AutoAppConfig.class);
 
         MemberService memberService = ac.getBean(MemberService.class);
         Assertions.assertThat(memberService).isInstanceOf(MemberService.class);

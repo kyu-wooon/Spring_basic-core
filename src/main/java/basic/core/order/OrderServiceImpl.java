@@ -18,7 +18,8 @@ public class OrderServiceImpl implements OrderService{
     @Autowired private  MemberRepository memberRepository;
     @Autowired private  DiscountPolicy discountPolicy;
     */
-    /*setter 방식
+    //setter 방식
+/*
     @Autowired
     public void setMemberRepository(MemberRepository memberRepository) {
         System.out.println("memberRepository = " + memberRepository);
@@ -28,9 +29,10 @@ public class OrderServiceImpl implements OrderService{
     public void setDiscountPolicy(DiscountPolicy discountPolicy) {
         System.out.println("discountPolicy = " + discountPolicy);
         this.discountPolicy = discountPolicy;
-    }*/
+    }
+*/
 
-    @Autowired//생성자가 하나일 때에는 Autowired생략이 가능하다.
+   @Autowired//생성자가 하나일 때에는 Autowired생략이 가능하다.
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         System.out.println("1. OrderServiceImpl.OrderServiceImpl");
         this.memberRepository = memberRepository;

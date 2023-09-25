@@ -1,15 +1,18 @@
 package basic.core.order;
 import basic.core.discount.DiscountPolicy;
 import basic.core.discount.FixDiscountPolicy;
-
 import basic.core.discount.RateDiscountPolicy;
 import basic.core.member.Member;
 import basic.core.member.MemberRepository;
 import basic.core.member.MemoryMemberRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+
 @Component
+//@RequiredArgsConstructor //final이 붙은 변수를 파라미터로 생성자를 생성한다.
 public class OrderServiceImpl implements OrderService{
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
@@ -32,9 +35,9 @@ public class OrderServiceImpl implements OrderService{
     }
 */
 
-   @Autowired//생성자가 하나일 때에는 Autowired생략이 가능하다.
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
-        System.out.println("1. OrderServiceImpl.OrderServiceImpl");
+   //@Autowired//생성자가 하나일 때에는 Autowired생략이 가능하다.
+    public OrderServiceImpl(MemberRepository memberRepository,  DiscountPolicy discountPolicy) {
+        //System.out.println("1. OrderServiceImpl.OrderServiceImpl");
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }

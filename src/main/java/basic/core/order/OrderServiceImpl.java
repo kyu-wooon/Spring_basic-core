@@ -1,4 +1,5 @@
 package basic.core.order;
+import basic.core.annotation.MainDiscountPolicy;
 import basic.core.discount.DiscountPolicy;
 import basic.core.discount.FixDiscountPolicy;
 import basic.core.discount.RateDiscountPolicy;
@@ -36,7 +37,7 @@ public class OrderServiceImpl implements OrderService{
 */
 
    //@Autowired//생성자가 하나일 때에는 Autowired생략이 가능하다.
-    public OrderServiceImpl(MemberRepository memberRepository,  DiscountPolicy discountPolicy) {
+    public OrderServiceImpl(MemberRepository memberRepository,  @MainDiscountPolicy DiscountPolicy discountPolicy) {
         //System.out.println("1. OrderServiceImpl.OrderServiceImpl");
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
